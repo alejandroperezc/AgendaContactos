@@ -51,6 +51,8 @@ public class Vista {
         System.out.println("Introduce el numero de telefono del contacto nuevo:");
         String numTelf = scanner.nextLine();
 
+        System.out.println("Introduce el numero de agenda donde quieres añadir el contacto:");
+        list.forEach(agenda -> System.out.println("1)" + agenda.nombre));
         String numerosAgenda = scanner.nextLine();
         return new ContactoDTO(nombre, numTelf, numerosAgenda);
     }
