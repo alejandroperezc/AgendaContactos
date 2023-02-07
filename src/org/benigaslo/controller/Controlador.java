@@ -1,6 +1,6 @@
 package org.benigaslo.controller;
 
-import org.benigaslo.model.Biblioteca;
+import org.benigaslo.model.Agenda;
 import org.benigaslo.model.Modelo;
 import org.benigaslo.view.Vista;
 
@@ -8,26 +8,33 @@ import java.util.List;
 
 public class Controlador {
 
+    Vista vista = new Vista();
+    public Modelo modelo = new Modelo();
+
+
 
     public void aCorrer(){
-        Vista vista = new Vista();
-        Modelo modelo = new Modelo();
 
         while(true) {
             vista.mostrarMenu();
 
             int o = vista.pedirOpcion();
 
-            if (o == 2) {
+            if (o == 1) {
 
-                List<Biblioteca> bibliotecas = modelo.obtenerListaBibliotecas();
-                vista.mostrarBibliotecas(bibliotecas);
+                List<Agenda> agendas = modelo.obtenerListaAgendas();
+                vista.mostrarAgendas(agendas);
 
 
-            } else if (o == 1) {
-                BibliotecaDTO datos = vista.pedirDatosBibliotecaNueva();
+            } else if (o == 2) {
+                NuevaAgendaDTO datos = vista.pedirDatosAgendaNueva();
+                modelo.guardarAgenda(datos);
 
-                modelo.guardarBiblioteca(datos);
+
+            } else if (o == 3) {
+                List<Agenda> listaRetorna = modelo.obtenerListaAgendas();
+
+                ContactoDTO datosNuevoContacto = vista.pedirDatosContactoNuevo(listaRetorna);
             }
         }
 

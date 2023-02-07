@@ -5,7 +5,13 @@ import org.benigaslo.controller.Controlador;
 
 public class Main {
     public static void main(String[] args) {
-        new Controlador().aCorrer();
+
+        Controlador controlador = new Controlador();
+
+        new RellenadordeAgendas().rellenar(controlador.modelo.agendas);
+
+        controlador.aCorrer();
+
 
     }
 }
