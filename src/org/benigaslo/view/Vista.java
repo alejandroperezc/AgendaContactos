@@ -72,4 +72,13 @@ public class Vista {
         int numerosAgenda = scanner.nextInt();
         return new ContactoDTO(nombre, numTelf, numerosAgenda);
     }
+
+    public String eliminarContactos(List<Contacto> contactos) {
+        System.out.println("Que contacto quieres eliminar?");
+
+        contactos.forEach(contacto -> System.out.println(contacto.nombre));
+        String nombre = scanner.next();
+       return nombre;
+
+    }
 }

@@ -43,7 +43,12 @@ public class Controlador {
                 List<Contacto> contactos = modelo.obtenerListaContactos();    //ver contactos
                 vista.mostrarContactos(contactos);
 
+            } else if (o == 5) {
+                List<Contacto> contactos = modelo.obtenerListaContactos();     //eliminar contacto
+                String elimnado = vista.eliminarContactos(contactos);
+                modelo.eliminarContacto(elimnado);
             }
+
         }
 
     }
