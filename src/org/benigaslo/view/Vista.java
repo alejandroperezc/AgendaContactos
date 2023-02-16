@@ -1,8 +1,10 @@
 package org.benigaslo.view;
 
+import org.benigaslo.RellenadordeAgendas;
 import org.benigaslo.controller.ContactoDTO;
 import org.benigaslo.controller.NuevaAgendaDTO;
 import org.benigaslo.model.Agenda;
+import org.benigaslo.model.Contacto;
 
 import java.util.List;
 import java.util.Scanner;
@@ -15,6 +17,9 @@ public class Vista {
         System.out.println("1) Ver agendas");
         System.out.println("2) Crear agenda");
         System.out.println("3) Añadir contacto");
+        System.out.println("4) Ver contactos");
+        System.out.println("5) Eliminar contacto");
+        System.out.println("------------------------------");
     }
 
     public int pedirOpcion() {
@@ -26,9 +31,20 @@ public class Vista {
     }
 
     public void mostrarAgendas(List<Agenda> agendas) {
+        System.out.println("------------------------------");
         System.out.println("LISTA DE AGENDAS");
 
         agendas.forEach(agenda -> System.out.println(agenda.nombre));
+        System.out.println("------------------------------");
+    }
+
+    public void mostrarContactos(List<Contacto> contactos) {
+        System.out.println("LISTA DE CONTACTOS");
+
+
+       // for (Contacto contacto : agenda.contactos) {}
+
+        contactos.forEach(contacto -> System.out.println(contacto.nombre));
     }
 
     public NuevaAgendaDTO pedirDatosAgendaNueva() {
@@ -52,8 +68,8 @@ public class Vista {
         String numTelf = scanner.nextLine();
 
         System.out.println("Introduce el numero de agenda donde quieres añadir el contacto:");
-        list.forEach(agenda -> System.out.println("1)" + agenda.nombre));
-        String numerosAgenda = scanner.nextLine();
+        list.forEach(agenda -> System.out.println(agenda.nombre));
+        int numerosAgenda = scanner.nextInt();
         return new ContactoDTO(nombre, numTelf, numerosAgenda);
     }
 }
