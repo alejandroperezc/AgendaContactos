@@ -34,17 +34,14 @@ public class Vista {
         System.out.println("------------------------------");
         System.out.println("LISTA DE AGENDAS");
 
-        agendas.forEach(agenda -> System.out.println(agenda.nombre));
+        agendas.forEach(agenda -> System.out.println(agenda.nombre + " (" + agenda.descripcion + ")"));
         System.out.println("------------------------------");
     }
 
     public void mostrarContactos(List<Contacto> contactos) {
         System.out.println("LISTA DE CONTACTOS");
 
-
-       // for (Contacto contacto : agenda.contactos) {}
-
-        contactos.forEach(contacto -> System.out.println(contacto.nombre));
+        contactos.forEach(contacto -> System.out.println(contacto.nombre + " (" + contacto.numTelf + ")"));
     }
 
     public NuevaAgendaDTO pedirDatosAgendaNueva() {

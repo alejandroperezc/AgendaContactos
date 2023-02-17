@@ -8,8 +8,8 @@ import java.util.List;
 public class RellenadordeAgendas {
 
     void rellenar(List<Agenda> agendas) {
-        Agenda agenda1 = new Agenda("personal", "copas de trabajo");
-        Agenda agenda2 = new Agenda("work", "copas de trabajo");
+        Agenda agenda1 = new Agenda("Personal", "Agenda personal");
+        Agenda agenda2 = new Agenda("Trabajo", "Compañeros de trabajo");
 
 
         Contacto contacto1 = new Contacto("juan", "3254552211");
