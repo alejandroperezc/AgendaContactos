@@ -7,6 +7,9 @@ import org.benigaslo.controller.NuevaAgendaDTO;
 import org.benigaslo.model.Agenda;
 import org.benigaslo.model.Contacto;
 
+import java.io.BufferedReader;
+import java.io.InputStreamReader;
+import java.util.ArrayList;
 import java.util.List;
 import java.util.Scanner;
 
@@ -17,16 +20,16 @@ public class Vista {
         System.out.println("\033[41m"+"MENU:"+"\033[0m");
         System.out.println("1) Ver agendas");
         System.out.println("2) Crear agenda");
-        System.out.println("3) Añadir contacto");
-        System.out.println("4) Ver contactos");
+        System.out.println("3) Ver contactos");
+        System.out.println("4) Añadir contacto");
         System.out.println("5) Eliminar contacto");
-        System.out.println("6) Modificar contacto");
-        System.out.println("7) Buscar contacto");
+       // System.out.println("6) Modificar contacto");
+       // System.out.println("7) Buscar contacto");
         System.out.println("------------------------------");
     }
 
     public int pedirOpcion() {
-        System.out.println("Opcion: ");
+        System.out.println("\033[34m"+"Opcion: "+"\033[0m");
         int opcion = scanner.nextInt();
         scanner.nextLine();
 
@@ -83,13 +86,6 @@ public class Vista {
         String eliminado = scanner.next();
 
 
-        for (Contacto contacto : contactos) {
-            if (contacto.nombre.equals(eliminado)) {
-                contactos.remove(contacto);
-                System.out.println("Contacto eliminado");
-            }
-        }
-
-        return contactos.toString();
+        return eliminado;
     }
 }

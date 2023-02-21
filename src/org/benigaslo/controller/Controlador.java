@@ -32,14 +32,14 @@ public class Controlador {
                 modelo.guardarAgenda(datos);
 
 
-            } else if (o == 3) {
+            } else if (o == 4) {
                 List<Agenda> listaRetorna = modelo.obtenerListaAgendas(); // añadir contacto
 
                 ContactoDTO datosNuevoContacto = vista.pedirDatosContactoNuevo(listaRetorna);
                 modelo.addContacto(datosNuevoContacto);
 
 
-            } else if (o == 4) {
+            } else if (o == 3) {
                 List<Contacto> contactos = modelo.obtenerListaContactos();    //ver contactos
                 vista.mostrarContactos(contactos);
 

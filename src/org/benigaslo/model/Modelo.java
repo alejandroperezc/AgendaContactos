@@ -47,6 +47,10 @@ public class Modelo {
     }
 
     public void eliminarContacto(String eliminado) {
-        agendas.removeIf(contacto -> eliminado.equals(contacto.nombre));
+
+        for (Agenda agenda : agendas){
+                agenda.contactos.removeIf(contacto -> contacto.nombre.equals(eliminado));
+        }
+
     }
 }
