@@ -46,44 +46,7 @@ public class Modelo {
         agendas.get(datosNuevoContacto.numerosAgenda).contactos.add(new Contacto(datosNuevoContacto.nombre, datosNuevoContacto.numTelf));
     }
 
-    public void eliminarContacto(String elimnado) {
-        agendas.removeIf(contacto -> elimnado.equals(contacto.nombre));
+    public void eliminarContacto(String eliminado) {
+        agendas.removeIf(contacto -> eliminado.equals(contacto.nombre));
     }
-
-    //public ContactoDTO enviarContactoNuevoalRellenador() {
-
-   // }
-
-
 }
-
-
-
-
-
-
-/*
-agendas:
-   0:
-        nombre: trabajo
-        contactos:
-            0: pepe
-            1: juan
-   1:
-        nombre:  personal
-        contactos:
-            0: ana
-            1: pepe
-
-
-
-
-
-
-nueva:
-    0: pepe
-    1: juan
-    0: ana
-    1: pepe
- */
-

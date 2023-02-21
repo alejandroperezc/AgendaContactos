@@ -45,10 +45,11 @@ public class Controlador {
 
             } else if (o == 5) {
                 List<Contacto> contactos = modelo.obtenerListaContactos();     //eliminar contacto
-                String elimnado = vista.eliminarContactos(contactos);
-                modelo.eliminarContacto(elimnado);
-            }
+                String eliminado = vista.eliminarContactos(contactos);
+                modelo.eliminarContacto(eliminado);
 
+
+            }
         }
 
     }
