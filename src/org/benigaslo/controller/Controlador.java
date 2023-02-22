@@ -50,13 +50,13 @@ public class Controlador {
 
 
             } else if (o == 6) {                                                //modificar contacto
-                String nombreOriginal = vista.pedirContactoAModificar();
+
+                List<Contacto> contactos = modelo.obtenerListaContactos();
+                String nombreOriginal = vista.pedirContactoAModificar(contactos);
 
                 Contacto contacto = modelo.buscarContactoConQuery(nombreOriginal);
 
-                //vista.muestraContacto(contacto);
-
-                ModificacionContactoDTO modificacionContactoDTO = vista.pedirDatosAModificar();
+               ModificacionContactoDTO modificacionContactoDTO = vista.pedirDatosAModificar();
 
                 modelo.modificarContactosConMod(contacto, modificacionContactoDTO);
             }

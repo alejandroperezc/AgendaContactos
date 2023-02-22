@@ -1,16 +1,11 @@
 package org.benigaslo.view;
 
-import com.sun.security.jgss.GSSUtil;
-import org.benigaslo.RellenadordeAgendas;
 import org.benigaslo.controller.ContactoDTO;
 import org.benigaslo.controller.ModificacionContactoDTO;
 import org.benigaslo.controller.NuevaAgendaDTO;
 import org.benigaslo.model.Agenda;
 import org.benigaslo.model.Contacto;
 
-import java.io.BufferedReader;
-import java.io.InputStreamReader;
-import java.util.ArrayList;
 import java.util.List;
 import java.util.Scanner;
 
@@ -19,15 +14,16 @@ public class Vista {
 
     public void mostrarMenu() {
         System.out.println("\033[41m"+"MENU:"+"\033[0m");
-        System.out.println("------------------------------");
-        System.out.println("1) Ver agendas ---------------");
-        System.out.println("2) Crear agenda --------------");
-        System.out.println("3) Ver contactos -------------");
-        System.out.println("4) Añadir contacto -----------");
-        System.out.println("5) Eliminar contacto ---------");
-        System.out.println("6) Modificar contacto --------");
+        System.out.println("\033[44m"+"_______________________________"+"\033[0m"+"\033[44m"+" "+"\033[0m");
+        System.out.println("\033[44m"+" "+"\033[0m"+"1) Ver agendas ---------------"+"\033[44m"+" "+"\033[0m");
+        System.out.println("\033[44m"+" "+"\033[0m"+"2) Crear agenda --------------"+"\033[44m"+" "+"\033[0m");
+        System.out.println("\033[44m"+" "+"\033[0m"+"3) Ver contactos -------------"+"\033[44m"+" "+"\033[0m");
+        System.out.println("\033[44m"+" "+"\033[0m"+"4) Añadir contacto -----------"+"\033[44m"+" "+"\033[0m");
+        System.out.println("\033[44m"+" "+"\033[0m"+"5) Eliminar contacto ---------"+"\033[44m"+" "+"\033[0m");
+        System.out.println("\033[44m"+" "+"\033[0m"+"6) Editar contacto -----------"+"\033[44m"+" "+"\033[0m");
        // System.out.println("7) Buscar contacto");
-        System.out.println("------------------------------");
+        System.out.println("\033[44m"+" "+"\033[0m"+"8)"+"\033[41m"+"Salir"+"                       "+"\033[0m"+"\033[44m"+" "+"\033[0m");
+        System.out.println("\033[44m"+"_______________________________"+"\033[0m"+"\033[44m"+" "+"\033[0m");
     }
 
     public int pedirOpcion() {
@@ -42,7 +38,7 @@ public class Vista {
         System.out.println("------------------------------");
         System.out.println("\033[46m"+"LISTA DE AGENDAS"+"\033[0m");
 
-        agendas.forEach(agenda -> System.out.println(agenda.nombre + " (" + agenda.descripcion + ")"));
+        agendas.forEach(agenda -> System.out.println("\033[33m" + agenda.nombre +"\033[0m" + " (" + agenda.descripcion + ")"));
         System.out.println("------------------------------");
     }
 
@@ -91,9 +87,10 @@ public class Vista {
         return eliminado;
     }
 
-    public String pedirContactoAModificar() {
+    public String pedirContactoAModificar(List<Contacto> contactos) {
         System.out.println("Que contacto quieres modificar?");
         System.out.println("(Escribe el nombre exacto)");
+        contactos.forEach(contacto -> System.out.println(contacto.nombre + " (" + contacto.numTelf + ")"));
         String mod = scanner.nextLine();
         return mod;
     }
