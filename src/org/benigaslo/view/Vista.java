@@ -14,16 +14,16 @@ public class Vista {
 
     public void mostrarMenu() {
         System.out.println("\033[41m"+"MENU:"+"\033[0m");
-        System.out.println("\033[44m"+"_______________________________"+"\033[0m"+"\033[44m"+" "+"\033[0m");
-        System.out.println("\033[44m"+" "+"\033[0m"+"1) Ver agendas ---------------"+"\033[44m"+" "+"\033[0m");
-        System.out.println("\033[44m"+" "+"\033[0m"+"2) Crear agenda --------------"+"\033[44m"+" "+"\033[0m");
-        System.out.println("\033[44m"+" "+"\033[0m"+"3) Ver contactos -------------"+"\033[44m"+" "+"\033[0m");
-        System.out.println("\033[44m"+" "+"\033[0m"+"4) Añadir contacto -----------"+"\033[44m"+" "+"\033[0m");
-        System.out.println("\033[44m"+" "+"\033[0m"+"5) Eliminar contacto ---------"+"\033[44m"+" "+"\033[0m");
-        System.out.println("\033[44m"+" "+"\033[0m"+"6) Editar contacto -----------"+"\033[44m"+" "+"\033[0m");
+        System.out.println("\033[44m"+"                               "+"\033[0m"+"\033[44m"+" "+"\033[0m");
+        System.out.println("\033[44m"+" "+"\033[0m"+"\033[44m"+"1) Ver agendas ---------------"+"\033[0m"+"\033[44m"+" "+"\033[0m");
+        System.out.println("\033[44m"+" "+"\033[0m"+"\033[44m"+"2) Crear agenda --------------"+"\033[0m"+"\033[44m"+" "+"\033[0m");
+        System.out.println("\033[44m"+" "+"\033[0m"+"\033[44m"+"3) Ver contactos -------------"+"\033[0m"+"\033[44m"+" "+"\033[0m");
+        System.out.println("\033[44m"+" "+"\033[0m"+"\033[44m"+"4) Añadir contacto -----------"+"\033[0m"+"\033[44m"+" "+"\033[0m");
+        System.out.println("\033[44m"+" "+"\033[0m"+"\033[44m"+"5) Eliminar contacto ---------"+"\033[0m"+"\033[44m"+" "+"\033[0m");
+        System.out.println("\033[44m"+" "+"\033[0m"+"\033[44m"+"6) Editar contacto -----------"+"\033[0m"+"\033[44m"+" "+"\033[0m");
        // System.out.println("7) Buscar contacto");
-        System.out.println("\033[44m"+" "+"\033[0m"+"8)"+"\033[41m"+"Salir"+"                       "+"\033[0m"+"\033[44m"+" "+"\033[0m");
-        System.out.println("\033[44m"+"_______________________________"+"\033[0m"+"\033[44m"+" "+"\033[0m");
+        System.out.println("\033[44m"+" "+"\033[0m"+"\033[44m"+"8)"+"\033[0m"+"\033[41m"+"Salir"+"                       "+"\033[0m"+"\033[44m"+" "+"\033[0m");
+        System.out.println("\033[44m"+"                               "+"\033[0m"+"\033[44m"+" "+"\033[0m");
     }
 
     public int pedirOpcion() {
