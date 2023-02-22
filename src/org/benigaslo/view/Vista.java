@@ -3,6 +3,7 @@ package org.benigaslo.view;
 import com.sun.security.jgss.GSSUtil;
 import org.benigaslo.RellenadordeAgendas;
 import org.benigaslo.controller.ContactoDTO;
+import org.benigaslo.controller.ModificacionContactoDTO;
 import org.benigaslo.controller.NuevaAgendaDTO;
 import org.benigaslo.model.Agenda;
 import org.benigaslo.model.Contacto;
@@ -18,12 +19,13 @@ public class Vista {
 
     public void mostrarMenu() {
         System.out.println("\033[41m"+"MENU:"+"\033[0m");
-        System.out.println("1) Ver agendas");
-        System.out.println("2) Crear agenda");
-        System.out.println("3) Ver contactos");
-        System.out.println("4) Añadir contacto");
-        System.out.println("5) Eliminar contacto");
-       // System.out.println("6) Modificar contacto");
+        System.out.println("------------------------------");
+        System.out.println("1) Ver agendas ---------------");
+        System.out.println("2) Crear agenda --------------");
+        System.out.println("3) Ver contactos -------------");
+        System.out.println("4) Añadir contacto -----------");
+        System.out.println("5) Eliminar contacto ---------");
+        System.out.println("6) Modificar contacto --------");
        // System.out.println("7) Buscar contacto");
         System.out.println("------------------------------");
     }
@@ -88,4 +90,22 @@ public class Vista {
 
         return eliminado;
     }
+
+    public String pedirContactoAModificar() {
+        System.out.println("Que contacto quieres modificar?");
+        System.out.println("(Escribe el nombre exacto)");
+        String mod = scanner.nextLine();
+        return mod;
+    }
+
+    public ModificacionContactoDTO pedirDatosAModificar() {
+        System.out.println("Nuevo nombre:");
+        String nombre = scanner.nextLine();
+        System.out.println("Nuevo numero:");
+        String telefono = scanner.nextLine();
+        return new ModificacionContactoDTO(nombre, telefono);
+    }
+
+
+
 }

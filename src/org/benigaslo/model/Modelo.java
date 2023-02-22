@@ -2,6 +2,7 @@ package org.benigaslo.model;
 
 import org.benigaslo.RellenadordeAgendas;
 import org.benigaslo.controller.ContactoDTO;
+import org.benigaslo.controller.ModificacionContactoDTO;
 import org.benigaslo.controller.NuevaAgendaDTO;
 
 import java.util.ArrayList;
@@ -52,5 +53,21 @@ public class Modelo {
                 agenda.contactos.removeIf(contacto -> contacto.nombre.equals(eliminado));
         }
 
+    }
+
+    public Contacto buscarContactoConQuery(String q) {
+        for (Agenda agenda : agendas){
+            for (Contacto contacto : agenda.contactos){
+                if (contacto.nombre.toLowerCase().contains(q.toLowerCase())) {
+                    return contacto;
+                }
+            }
+        }
+        return null;
+    }
+
+    public void modificarContactosConMod(Contacto original, ModificacionContactoDTO datos) {  // m=juan
+        original.nombre = datos.nombre;
+        original.numTelf = datos.telefono;
     }
 }

@@ -49,6 +49,16 @@ public class Controlador {
                 modelo.eliminarContacto(eliminado);
 
 
+            } else if (o == 6) {                                                //modificar contacto
+                String nombreOriginal = vista.pedirContactoAModificar();
+
+                Contacto contacto = modelo.buscarContactoConQuery(nombreOriginal);
+
+                //vista.muestraContacto(contacto);
+
+                ModificacionContactoDTO modificacionContactoDTO = vista.pedirDatosAModificar();
+
+                modelo.modificarContactosConMod(contacto, modificacionContactoDTO);
             }
         }
 
