@@ -59,6 +59,12 @@ public class Controlador {
                ModificacionContactoDTO modificacionContactoDTO = vista.pedirDatosAModificar();
 
                 modelo.modificarContactosConMod(contacto, modificacionContactoDTO);
+
+            } else if (o == 8) {
+
+            } else if (o == 7) {
+                vista.cerrarPrograma();
+                break;
             }
         }
 

@@ -13,17 +13,26 @@ public class Vista {
     Scanner scanner = new Scanner(System.in);
 
     public void mostrarMenu() {
-        System.out.println("\033[41m"+"MENU:"+"\033[0m");
-        System.out.println("\033[44m"+"                               "+"\033[0m"+"\033[44m"+" "+"\033[0m");
-        System.out.println("\033[44m"+" "+"\033[0m"+"\033[44m"+"1) Ver agendas ---------------"+"\033[0m"+"\033[44m"+" "+"\033[0m");
-        System.out.println("\033[44m"+" "+"\033[0m"+"\033[44m"+"2) Crear agenda --------------"+"\033[0m"+"\033[44m"+" "+"\033[0m");
-        System.out.println("\033[44m"+" "+"\033[0m"+"\033[44m"+"3) Ver contactos -------------"+"\033[0m"+"\033[44m"+" "+"\033[0m");
-        System.out.println("\033[44m"+" "+"\033[0m"+"\033[44m"+"4) Añadir contacto -----------"+"\033[0m"+"\033[44m"+" "+"\033[0m");
-        System.out.println("\033[44m"+" "+"\033[0m"+"\033[44m"+"5) Eliminar contacto ---------"+"\033[0m"+"\033[44m"+" "+"\033[0m");
-        System.out.println("\033[44m"+" "+"\033[0m"+"\033[44m"+"6) Editar contacto -----------"+"\033[0m"+"\033[44m"+" "+"\033[0m");
-       // System.out.println("7) Buscar contacto");
-        System.out.println("\033[44m"+" "+"\033[0m"+"\033[44m"+"8)"+"\033[0m"+"\033[41m"+"Salir"+"                       "+"\033[0m"+"\033[44m"+" "+"\033[0m");
-        System.out.println("\033[44m"+"                               "+"\033[0m"+"\033[44m"+" "+"\033[0m");
+        System.out.println("\033[45m"+"✉MENU✉                        "+"\033[0m");
+        //System.out.println("\033[44m"+"                                "+"\033[0m");
+        System.out.print("\033[44m"+" "+" 1)\uD83D\uDCD6Ver agendas"+"\033[0m");
+        System.out.println("\033[44m"+"--------------"+"\033[44m"+" "+"\033[0m");
+        System.out.print("\033[44m"+" "+" 2)➕Crear agenda"+"\033[0m");
+        System.out.println("\033[44m"+"-------------"+"\033[44m"+" "+"\033[0m");
+        System.out.print("\033[44m"+" "+" 3)\uD83D\uDC65Ver contactos"+"\033[0m");
+        System.out.println("\033[44m"+"------------"+"\033[44m"+" "+"\033[0m");
+        System.out.print("\033[44m"+" "+" 4)✅Añadir contacto"+"\033[0m");
+        System.out.println("\033[44m"+"----------"+"\033[44m"+" "+"\033[0m");
+        System.out.print("\033[44m"+" "+" 5)🗑Eliminar contacto"+"\033[0m");
+        System.out.println("\033[44m"+"--------"+"\033[44m"+" "+"\033[0m");
+        System.out.print("\033[44m"+" "+" 6)✏Editar contacto"+"\033[0m");
+        System.out.println("\033[44m"+"----------"+"\033[44m"+" "+"\033[0m");
+        //System.out.print("\033[44m"+" "+"\033[0m"+" 7) Buscar contacto");
+        //System.out.println("           "+"\033[44m"+" "+"\033[0m");
+        //System.out.println("\033[44m"+"                               "+"\033[0m"+"\033[44m"+" "+"\033[0m");
+        System.out.print("\033[46m"+ "  7)❌Salir❌                   "+"\033[0m");
+        System.out.println("                  ");
+
     }
 
     public int pedirOpcion() {
@@ -43,9 +52,11 @@ public class Vista {
     }
 
     public void mostrarContactos(List<Contacto> contactos) {
+        System.out.println("------------------------------");
         System.out.println("\033[46m"+"LISTA DE CONTACTOS"+"\033[0m");
 
-        contactos.forEach(contacto -> System.out.println(contacto.nombre + " (" + contacto.numTelf + ")"));
+        contactos.forEach(contacto -> System.out.println("\033[33m" +"Nombre:  "+"\033[0m" + contacto.nombre+"   " + "\033[33m" +"Num:  "+"\033[0m" + contacto.numTelf ));
+        System.out.println("------------------------------");
     }
 
     public NuevaAgendaDTO pedirDatosAgendaNueva() {
@@ -70,7 +81,7 @@ public class Vista {
         System.out.println("Introduce el numero de telefono del contacto nuevo:");
         String numTelf = scanner.nextLine();
 
-        System.out.println("Introduce el numero de agenda donde quieres añadir el contacto:");
+        System.out.println("Introduce el numero de agenda donde quieres añadir el contacto (0,1,2...):");
         list.forEach(agenda -> System.out.println(agenda.nombre));
         int numerosAgenda = scanner.nextInt();
         return new ContactoDTO(nombre, numTelf, numerosAgenda);
@@ -104,5 +115,7 @@ public class Vista {
     }
 
 
-
+    public void cerrarPrograma() {
+        System.out.println("Cerrando programa...");
+    }
 }
